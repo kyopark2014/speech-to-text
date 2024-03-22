@@ -1,6 +1,6 @@
 # Speech을 Text로 변환하기
 
-GenAI를 음성으로 제어하기 위해서는 Speech to text 기술이 필요합니다. 여기서는 [AWS Transcribe](https://aws.amazon.com/ko/transcribe/)을 이용하여 실시간으로 음성을 텍스트로 변환하는것을 설명합니다.
+음성으로 GenAI를 활용하기 위해서는 Speech to text 기술이 필요합니다. 여기서는 [AWS Transcribe](https://aws.amazon.com/ko/transcribe/)을 이용하여 실시간으로 음성을 텍스트로 변환하는것을 설명합니다.
 
 ## Speech 변환 주요 함수
 
