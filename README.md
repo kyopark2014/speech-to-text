@@ -21,7 +21,7 @@ with stream:
     yield indata, status
 ```
 
-아래와 같이 사용할 region을 지정한 TranscribeStreamingClient을 이용하여 아래와 같이 텍스트 stream을 가져옵니다. 이때 변환할 언어('language_code')와 sampling rate, encoding 방식을 지정합니다. 
+아래와 같이 사용할 region을 지정한 TranscribeStreamingClient을 이용하여 아래와 같이 텍스트 stream을 가져옵니다. 이때 변환할 언어(language_code)와 sampling rate, encoding 방식을 지정합니다. 
 
 ```python
 from amazon_transcribe.client import TranscribeStreamingClient
@@ -42,6 +42,7 @@ async def basic_transcribe():
     await asyncio.gather(write_chunks(stream), handler.handle_events())
 ````
 
+텍스트는 아래와 같이 handle_transcript_event()에서 수행합니다. 결과는 partial 결과 후에 전체 결과를 얻을 수 있습니다. 이 데이터를 requests를 이용하여 특정 API 서버로 전달하면, 추후 생성형 AI에서 활용할 수 있습니다. 
 ```python
 async def handle_transcript_event(self, transcript_event: TranscriptEvent):
   results = transcript_event.transcript.results
@@ -68,9 +69,6 @@ async def handle_transcript_event(self, transcript_event: TranscriptEvent):
           #resp = requests.post(url, json=msg)
 ```
 
-
-
-
 ## Voice Interpreter의 설치 및 실행
 
 여기서 설명하는 Voice Interpreter는 [Amazon Transcribe Streaming SDK](https://github.com/awslabs/amazon-transcribe-streaming-sdk)을 참조하였습니다. Voice Interpreter는 음성으로부터 Text를 추출합니다. 
@@ -94,7 +92,7 @@ pip install -r requirements.txt
 python mic_main.py
 ```
 
-실제 실행 결과는 아래와 같습니다.
+실행 결과는 아래와 같습니다. 입력 테스트는 앞뒤 단어를 참조하여 transcribe를 이용해 가장 가까운 단어를 찾을 수 있습니다.
 
 ```text
 # python mic_main.py 
