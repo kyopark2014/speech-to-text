@@ -2,7 +2,7 @@
 
 음성으로 GenAI를 활용하기 위해서는 Speech to text 기술이 필요합니다. 여기서는 [AWS Transcribe](https://aws.amazon.com/ko/transcribe/)을 이용하여 실시간으로 음성을 텍스트로 변환하는것을 설명합니다.
 
-## Speech 변환 주요 함수
+## Voice Interpreter의 주요 기능
 
 Voice Interpreter는 [Amazon Transcribe Streaming SDK](https://github.com/awslabs/amazon-transcribe-streaming-sdk)을 참조하여 음성으로부터 Text를 추출합니다. 아래에서 설명하는 [Python 파일](./interpreter/mic_main.py)은 [Greengrass V2](https://docs.aws.amazon.com/greengrass/v2/developerguide/develop-greengrass-components.html)의 Local component를 이용해 Device에 설치되고 실행됩니다. 이를 이용해 Device는 사용자의 음성에서 텍스트를 추출하여 생성형 AI를 이용한 Application에서 활용할 수 있습니다. [sounddevice](https://pypi.org/project/sounddevice/)를 이용해 아래와 같이 audio stream에서 음성 데이터를 추출합니다.
 
