@@ -75,7 +75,7 @@ async def handle_transcript_event(self, transcript_event: TranscriptEvent):
 
 ```text
 git clone https://github.com/kyopark2014/speech-to-text
-cd interpreter
+cd speech-to-text/interpreter
 ```
 
 실행에 필요한 필요한 라이브러리를 설치합니다. 여기서 설치하는 프로그램 패키지는 [amazon-transcribe](https://pypi.org/project/amazon-transcribe/)와 [sounddevice](https://pypi.org/project/sounddevice/)로서 requirements를 아래와 같이 설치합니다.
